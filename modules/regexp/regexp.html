@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Строковые выражения</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="../../css/style.css" rel="stylesheet">
+  </head>
+  <body>
+    <main class="page-main">
+      <section class="first">
+        <h1>Регулярные выражения</h1>
+      </section>
+      <section class="match">
+          <h2>Метод String.match</h2>
+          <div class="example">
+              <p class="example__syntax">String.match(regexp)</p>
+              <p class="example__values">Строка на вход: "Маленькие зайки в майках, скачут по лужайке"</p>
+              <ul>
+                  <li>
+                      <p>1. Регулярное выражение <b>/ай/</b></p>
+                      <span class="example__result example__result-1-1"></span>
+                      <p>Возвращается первое ай "Маленькие з<b>ай</b>ки в майках, скачут по лужАйке", т.к. нет ключа на повторное использование</p>
+                  </li>
+                  <li>
+                    <p>2. Регулярное выражение <b>/ай/g</b></p>
+                    <span class="example__result example__result-1-2"></span>
+                    <p>Возвращается первое и второе ай "Маленькие з<b>ай</b>ки в м<b>ай</b>ках, скачут по лужАйке", из-за ключа /g, но Ай игнорируется, т.к. не соответствует ключу по регистру</p>
+                </li>
+                <li>
+                    <p>3. Регулярное выражение <b>/ай/gi</b></p>
+                    <span class="example__result example__result-1-3"></span>
+                    <p>Возвращается первое и второе ай "Маленькие з<b>ай</b>ки в м<b>ай</b>ках, скачут по луж<b>Ай</b>ке", учтены все ай и Ай</p>
+                </li>
+                <li>
+                    <p>4. Регулярное выражение <b>/ой/gi</b></p>
+                    <span class="example__result example__result-1-4"></span>
+                    <p>Возвращает null, т.к. совпадений нет</p>
+                </li>
+                <li>
+                    <p>5. Регулярное выражение <b>/ай/gi</b>, через конструктор</p>
+                    <span class="example__result example__result-1-5"></span>
+                    <p>Результат аналогичен примеру 3</p>
+                </li>
+              </ul>
+          </div>
+      </section>
+    </main>
+    <script src="./scripts.js"></script>
+  </body>
+</html>
